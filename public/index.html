@@ -320,7 +320,6 @@ section {
    9. FOOTER
 -------------------------------------------------- */
 /* Footer container */
-/* Footer container */
 .footer {
       position: relative;
       margin-top: 100px;
@@ -364,18 +363,9 @@ section {
       opacity: 0.55;
       pointer-events: none;
 
-      /* Breathing animation */
-      animation: meshFloat 14s ease-in-out infinite;
+      transition: transform 0.25s ease-out;
 }
 
-/* Subtle floating animation */
-@keyframes meshFloat {
-      0%   { transform: translateX(-50%) translateY(0); }
-      50%  { transform: translateX(-50%) translateY(22px); }
-      100% { transform: translateX(-50%) translateY(0); }
-}
-
-/* Footer content */
 .footer-content {
       position: relative;
       z-index: 2;
@@ -395,6 +385,7 @@ section {
       font-size: 12px;
       color: var(--muted);
 }
+
 
 
 
