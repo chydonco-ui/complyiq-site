@@ -292,6 +292,50 @@ nav {
       font-size: 11px;
       font-weight: 500;
 }
+/* -------------------------------------------
+   HERO CARD ANIMATION — FLOAT + HOVER LIFT
+-------------------------------------------- */
+
+/* Soft idle float */
+.hero-card {
+      animation: heroCardFloat 10s ease-in-out infinite;
+      transform-style: preserve-3d;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover lift effect */
+.hero-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 28px 60px rgba(0,0,0,0.65);
+}
+
+/* Glow pulse */
+.hero-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(
+            circle at 50% 0%,
+            rgba(138,43,226,0.25),
+            rgba(0,230,184,0.15),
+            transparent 70%
+      );
+      opacity: 0.0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+}
+
+.hero-card:hover::after {
+      opacity: 0.35;
+}
+
+/* Keyframes for idle float */
+@keyframes heroCardFloat {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(10px); }
+      100% { transform: translateY(0px); }
+}
 
 /* --------------------------------------------------
    6. SECTION LAYOUT
