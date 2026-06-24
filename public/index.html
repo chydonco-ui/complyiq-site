@@ -319,28 +319,52 @@ section {
 /* --------------------------------------------------
    9. FOOTER
 -------------------------------------------------- */
-footer {
-      margin-top: 80px;
-      padding-top: 32px;
+.footer {
+      position: relative;
+      margin-top: 100px;
+      padding: 60px 0;
       border-top: 1px solid rgba(255,255,255,0.08);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13px;
-      color: var(--muted);
-      opacity: 0.9;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
 }
 
-.footer-left {
+/* Background decorative image */
+.footer-bg {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 420px;
+      height: 420px;
+      background: url('https://cube.global/assets/footer-bg.svg') no-repeat center/contain;
+      opacity: 0.18;
+      pointer-events: none;
+      filter: blur(2px);
+}
+
+/* Content */
+.footer-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+}
+
+.footer-brand {
+      font-size: 14px;
       font-weight: 500;
+      color: var(--text);
 }
 
-.footer-right {
+.footer-sub {
       font-size: 12px;
       color: var(--muted);
 }
+
 
 
   </style>
