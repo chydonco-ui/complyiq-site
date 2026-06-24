@@ -202,45 +202,62 @@ nav {
 
 /* Card on the right side */
 .hero-card {
-      background: radial-gradient(circle at top left, #1e293b 0, #020617 55%);
-      border-radius: 18px;
-      padding: 18px 18px 16px;
-      border: 1px solid #1f2937;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      background: radial-gradient(circle at top left, #2a1450 0%, #12071f 70%);
+      border-radius: 20px;
+      padding: 24px 24px 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 22px 50px rgba(0,0,0,0.55);
+      backdrop-filter: blur(6px);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 360px;
+      margin: 0 auto;
 }
 
-/* Card title */
 .hero-card-title {
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--muted);
-      margin-bottom: 10px;
+      margin-bottom: 4px;
 }
 
-/* Metrics inside card */
 .hero-metric-row {
       display: flex;
       justify-content: space-between;
-      font-size: 13px;
-      margin-bottom: 6px;
+      align-items: center;
+      font-size: 14px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.hero-metric-label { color: var(--muted); }
-.hero-metric-value { font-weight: 600; }
+.hero-metric-row:last-child {
+      border-bottom: none;
+}
 
-/* Pill badge */
+.hero-metric-label {
+      color: var(--muted);
+}
+
+.hero-metric-value {
+      font-weight: 600;
+      color: var(--accent);
+}
+
 .pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       border-radius: 999px;
-      padding: 4px 10px;
-      background: rgba(34, 197, 94, 0.12);
-      color: #bbf7d0;
+      padding: 6px 12px;
+      background: rgba(0,230,184,0.12);
+      color: #8ffce0;
       font-size: 11px;
-      margin-top: 10px;
+      margin-top: 6px;
+      font-weight: 500;
 }
+
 
   
 
