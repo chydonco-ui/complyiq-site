@@ -111,17 +111,38 @@ nav {
       border-radius: 8px;
       font-weight: 600;
       transition: 0.25s ease;
+  position: relative;
+      overflow: hidden;
+}
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.25s ease;
+      backdrop-filter: blur(6px);
+      position: relative;
+      overflow: hidden;
+}
+
+.btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.btn-secondary:active {
+      transform: translateY(-1px) scale(0.98);
 }
 
 
 /* -------------------------------------------
    GLOWING BORDER — PREMIUM ANIMATION
 -------------------------------------------- */
-
-.btn-primary {
-      position: relative;
-      overflow: hidden;
-}
 
 .btn-primary::before {
       content: "";
@@ -151,33 +172,7 @@ nav {
       100% { background-position: 0% 50%; }
 }
 
-/* Optional: glowing border for secondary button */
-/* Secondary CTA — base styles */
-.btn-secondary {
-      position: relative;
-      overflow: hidden;
 
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: 0.25s ease;
-      backdrop-filter: blur(6px);
-}
-
-/* Hover lift */
-.btn-secondary:hover {
-      background: rgba(255,255,255,0.18);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-}
-
-.btn-secondary:active {
-      transform: translateY(-1px) scale(0.98);
-}
 
 /* Glowing border */
 .btn-secondary::before {
