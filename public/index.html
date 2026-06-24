@@ -5,26 +5,33 @@
   <title>ComplyIQ – The Regulatory Operating System for Nigeria</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
+
+
+
+ /* --------------------------------------------------
+   1. ROOT VARIABLES
+-------------------------------------------------- */
 :root {
-      --primary: #ff4d8d;          /* Vibrant pink */
-      --primary-dark: #d40062;     /* Deep magenta */
-      --bg: #12071f;               /* Richer, deeper purple base */
-      --card: #1e0f33;             /* Premium purple card panels */
-      --text: #ffffff;             /* Clean white text */
-      --muted: #c9b3ff;            /* Softer lavender for secondary text */
-      --accent: #00e6b8;           /* Aqua green accent */
-      --danger: #ff8a00;           /* Bright orange */
+      --primary: #ff4d8d;
+      --primary-dark: #d40062;
+      --bg: #12071f;
+      --card: #1e0f33;
+      --text: #ffffff;
+      --muted: #c9b3ff;
+      --accent: #00e6b8;
+      --danger: #ff8a00;
       --hero-gradient: linear-gradient(135deg, #ff4d8d, #8a2be2);
 }
 
-/* Reset */
+/* --------------------------------------------------
+   2. GLOBAL RESET + BASE
+-------------------------------------------------- */
 * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
 }
 
-/* Body */
 body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: radial-gradient(circle at top, #1a1030 0, #0b0618 45%, #000 100%);
@@ -32,20 +39,20 @@ body {
       line-height: 1.6;
 }
 
-/* Links */
 a {
       color: inherit;
       text-decoration: none;
 }
 
-/* Page container */
 .page {
       max-width: 1120px;
       margin: 0 auto;
       padding: 24px 16px 64px;
 }
 
-/* Header */
+/* --------------------------------------------------
+   3. HEADER + NAVIGATION
+-------------------------------------------------- */
 header {
       display: flex;
       align-items: center;
@@ -54,7 +61,6 @@ header {
       padding: 8px 0 24px;
 }
 
-/* Logo */
 .logo {
       display: flex;
       align-items: center;
@@ -65,7 +71,6 @@ header {
       font-size: 14px;
 }
 
-/* Logo mark */
 .logo-mark {
       width: 32px;
       height: 32px;
@@ -77,7 +82,6 @@ header {
       font-size: 18px;
 }
 
-/* Navigation */
 nav {
       display: flex;
       gap: 20px;
@@ -89,7 +93,9 @@ nav {
       color: var(--text);
 }
 
-/* Buttons */
+/* --------------------------------------------------
+   4. BUTTONS
+-------------------------------------------------- */
 .btn {
       border-radius: 999px;
       padding: 8px 18px;
@@ -109,7 +115,6 @@ nav {
       transform: translateY(-1px);
 }
 
-/* Outline button */
 .btn-outline {
       background: transparent;
       border-color: rgba(255,255,255,0.2);
@@ -121,30 +126,59 @@ nav {
       color: white;
 }
 
+/* Hero-specific buttons */
+.btn-primary {
+      background: var(--accent);
+      color: #1a0b2e;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.25s ease;
+}
 
-    /* Hero */
-    
-/* Hero */
+.btn-primary:hover {
+      background: #00f5cc;
+      transform: translateY(-2px);
+}
+
+.btn-secondary {
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.4);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.25s ease;
+}
+
+.btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+}
+
+/* --------------------------------------------------
+   5. HERO SECTION
+-------------------------------------------------- */
 .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
       padding: 80px 40px;
       align-items: center;
-      background: linear-gradient(135deg, #ff4d8d, #8a2be2);
+      background: var(--hero-gradient);
       color: white;
       border-radius: 12px;
 }
 
-/* Mobile layout */
 @media (max-width: 900px) {
-      .hero { 
-            grid-template-columns: 1fr; 
+      .hero {
+            grid-template-columns: 1fr;
             text-align: center;
       }
 }
 
-/* NEW: Wrapper that centres the entire text block */
 .hero-text {
       display: flex;
       flex-direction: column;
@@ -154,7 +188,6 @@ nav {
       margin: 0 auto;
 }
 
-/* Kicker */
 .hero-kicker {
       font-size: 13px;
       text-transform: uppercase;
@@ -163,21 +196,18 @@ nav {
       margin-bottom: 10px;
 }
 
-/* Title */
 .hero-title {
       font-size: clamp(32px, 4vw, 40px);
       font-weight: 700;
       margin-bottom: 12px;
 }
 
-/* Gradient highlight inside title */
 .hero-title span {
       background: linear-gradient(120deg, #60a5fa, #22c55e);
       -webkit-background-clip: text;
       color: transparent;
 }
 
-/* Subheading */
 .hero-sub {
       font-size: 15px;
       color: var(--muted);
@@ -185,7 +215,6 @@ nav {
       margin: 0 auto 20px auto;
 }
 
-/* Buttons */
 .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -194,17 +223,15 @@ nav {
       margin-bottom: 16px;
 }
 
-/* Meta text */
 .hero-meta {
       font-size: 12px;
       color: var(--muted);
 }
 
-/* Card on the right side */
 .hero-card {
       background: radial-gradient(circle at top left, #2a1450 0%, #12071f 70%);
       border-radius: 20px;
-      padding: 24px 24px 20px;
+      padding: 24px;
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 22px 50px rgba(0,0,0,0.55);
       backdrop-filter: blur(6px);
@@ -220,7 +247,6 @@ nav {
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--muted);
-      margin-bottom: 4px;
 }
 
 .hero-metric-row {
@@ -254,76 +280,128 @@ nav {
       background: rgba(0,230,184,0.12);
       color: #8ffce0;
       font-size: 11px;
-      margin-top: 6px;
       font-weight: 500;
 }
 
-
-  
-
-    /* Sections */
-    section {
-      margin-top: 40px;
-    }
-    .section-kicker {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .section-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 14px;
-    }
-    .section-grid {
+/* --------------------------------------------------
+   6. PROBLEM + SOLUTION SECTIONS
+-------------------------------------------------- */
+.section-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-    @media (max-width: 800px) {
-      .section-grid { grid-template-columns: 1fr; }
-    }
-    .card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 16px 18px;
-      border: 1px solid #1f2937;
-      font-size: 14px;
-    }
-    .card h3 {
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
-    .muted { color: var(--muted); }
-    ul { list-style: none; margin-top: 6px; }
-    li { margin-bottom: 4px; display: flex; gap: 8px; align-items: flex-start; }
-    .bullet {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #4b5563;
-      margin-top: 7px;
-    }
+      gap: 32px;
+      margin-top: 80px;
+}
 
-    .tag-row {
+.card {
+      background: var(--card);
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+}
+
+.section-kicker {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 12px;
+}
+
+.section-title {
+      font-size: clamp(26px, 4vw, 34px);
+      font-weight: 700;
+      margin-bottom: 16px;
+}
+
+.section-title span {
+      background: linear-gradient(120deg, #ff4d8d, #8a2be2);
+      -webkit-background-clip: text;
+      color: transparent;
+}
+
+.muted {
+      color: var(--muted);
+      margin-bottom: 24px;
+}
+
+.card ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 14px;
+}
+
+.card li {
+      display: flex;
+      gap: 10px;
+      font-size: 15px;
+      line-height: 1.5;
+}
+
+.bullet {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 6px;
+}
+
+/* --------------------------------------------------
+   7. HOW IT WORKS
+-------------------------------------------------- */
+#how-it-works {
+      margin-top: 80px;
+}
+
+.how-list {
+      list-style: none;
+      padding: 0;
+      margin: 32px 0 0;
+      display: grid;
+      gap: 20px;
+}
+
+.how-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255,255,255,0.04);
+      padding: 18px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 15px;
+      line-height: 1.5;
+}
+
+.how-list strong {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 15px;
+}
+
+/* --------------------------------------------------
+   8. TAGS (Customers section)
+-------------------------------------------------- */
+.tag-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-top: 8px;
-    }
-    .tag {
+}
+
+.tag {
       font-size: 11px;
       padding: 3px 8px;
       border-radius: 999px;
       background: #020617;
       border: 1px solid #1f2937;
       color: var(--muted);
-    }
+}
 
-    /* Footer */
-    footer {
+/* --------------------------------------------------
+   9. FOOTER
+-------------------------------------------------- */
+footer {
       margin-top: 40px;
       padding-top: 20px;
       border-top: 1px solid #111827;
@@ -333,202 +411,4 @@ nav {
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <header>
-      <div class="logo">
-        <div class="logo-mark">C</div>
-        <span>ComplyIQ</span>
-      </div>
-      <nav>
-        <a href="#problem" class="nav-link">Problem</a>
-        <a href="#solution" class="nav-link">Solution</a>
-        <a href="#how" class="nav-link">How it works</a>
-        <a href="#customers" class="nav-link">Who we serve</a>
-      </nav>
-      <button class="btn">Request demo</button>
-    </header>
-
-    <main>
-      <!-- Hero -->
-     <section class="hero">
-  
-  <!-- LEFT COLUMN: TEXT -->
-  <div class="hero-text">
-      <div class="hero-kicker">RegTech for Nigeria</div>
-
-      <h1 class="hero-title">
-          Automated Compliance Intelligence <span>for Nigerian Businesses</span>
-      </h1>
-
-      <p class="hero-sub">
-    Real-time regulatory monitoring, instant alerts, and clear guidance — all in one platform.
-</p>
-
-      <div class="hero-actions">
-          <a href="#" class="btn-primary">Get Early Access</a>
-          <a href="#how-it-works" class="btn-secondary">See How It Works</a>
-      </div>
-
-      <div class="hero-meta">No credit card required</div>
-  </div>
-
-  <!-- RIGHT COLUMN: CARD OR IMAGE -->
-  <div class="hero-card">
-      <div class="hero-card-title">Compliance Snapshot</div>
-
-      <div class="hero-metric-row">
-          <span class="hero-metric-label">Regulations Tracked</span>
-          <span class="hero-metric-value">+120</span>
-      </div>
-
-      <div class="hero-metric-row">
-          <span class="hero-metric-label">Alerts Delivered</span>
-          <span class="hero-metric-value">3,482</span>
-      </div>
-
-      <div class="pill">Real‑time Monitoring</div>
-  </div>
-
-</section>
-
-      <!-- Problem / Solution -->
-      <section id="problem">
-  <div class="section-grid">
-
-    <!-- PROBLEM CARD -->
-    <div class="card">
-      <div class="section-kicker">The Problem</div>
-
-      <h2 class="section-title">
-        Fragmented. Fast‑Moving. High‑Risk.
-      </h2>
-
-      <p class="muted">
-        Nigerian institutions juggle overlapping mandates from CBN, SEC, NAICOM, NDIC, NFIU, NCC, FIRS and state‑level bodies. 
-        Updates are frequent, formats inconsistent, and enforcement is tightening — leaving compliance teams constantly reacting instead of staying ahead.
-      </p>
-
-      <ul>
-        <li><span class="bullet"></span><span><strong>Manual monitoring</strong> of circulars, guidelines, directives and press releases.</span></li>
-        <li><span class="bullet"></span><span><strong>Slow, spreadsheet‑driven analysis</strong> that delays implementation and increases risk.</span></li>
-        <li><span class="bullet"></span><span><strong>High likelihood of missed obligations</strong>, late responses and regulatory sanctions.</span></li>
-        <li><span class="bullet"></span><span><strong>Compliance teams stuck firefighting</strong> instead of driving strategic risk management.</span></li>
-      </ul>
-    </div>
-
-    <!-- SOLUTION CARD -->
-  <div class="card" id="solution">
-  <div class="section-kicker">Our Solution</div>
-
-  <h2 class="section-title">
-    A Single Source of Regulatory Truth — <span>Powered by Automated Intelligence</span>
-  </h2>
-
-  <p class="muted">
-    ComplyIQ continuously monitors Nigeria’s regulatory ecosystem, interprets every update, extracts obligations, 
-    and operationalises change across your organisation — with speed, accuracy and audit‑ready traceability.
-  </p>
-
-  <ul>
-    <li><span class="bullet"></span><span><strong>Real‑time regulatory ingestion</strong> — every circular, guideline, directive and update captured the moment it’s released.</span></li>
-    <li><span class="bullet"></span><span><strong>AI‑driven interpretation</strong> — obligations, deadlines, thresholds and penalties extracted with precision.</span></li>
-    <li><span class="bullet"></span><span><strong>Automated change workflows</strong> — assign owners, track progress, capture evidence and close actions.</span></li>
-    <li><span class="bullet"></span><span><strong>Executive‑ready dashboards</strong> — instant visibility for CROs, COOs, legal teams and boards.</span></li>
-  </ul>
-</div>
-
-
-  </div>
-</section>
-
-
-      <!-- How it works -->
-      <section id="how-it-works">
-  <div class="section-grid">
-
-    <div class="card">
-      <div class="section-kicker">How It Works</div>
-
-      <h2 class="section-title">
-        From Regulatory Change to Organisational Action — <span>In Three Steps</span>
-      </h2>
-
-      <ul class="how-list">
-
-        <li>
-          <span class="bullet"></span>
-          <div>
-            <strong>Monitor</strong><br>
-            ComplyIQ continuously ingests regulatory updates from all Nigerian regulators in real time.
-          </div>
-        </li>
-
-        <li>
-          <span class="bullet"></span>
-          <div>
-            <strong>Interpret</strong><br>
-            AI extracts obligations, deadlines, thresholds, penalties and affected entities with audit‑ready precision.
-          </div>
-        </li>
-
-        <li>
-          <span class="bullet"></span>
-          <div>
-            <strong>Operationalise</strong><br>
-            Automated workflows assign owners, track progress, capture evidence and generate regulator‑ready reports.
-          </div>
-        </li>
-
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-
-      <!-- Customers & model -->
-      <section id="customers">
-        <div class="section-grid">
-          <div class="card">
-            <div class="section-kicker">Who we serve</div>
-            <h2 class="section-title">Built for Nigeria’s most regulated institutions.</h2>
-            <p class="muted">ComplyIQ is designed for organisations operating under multi‑regulator oversight:</p>
-            <div class="tag-row">
-              <span class="tag">Banks & MFIs</span>
-              <span class="tag">Fintechs & PSPs</span>
-              <span class="tag">Insurers (NAICOM)</span>
-              <span class="tag">Telcos (NCC)</span>
-              <span class="tag">Capital market operators (SEC)</span>
-              <span class="tag">Pension operators</span>
-              <span class="tag">Large corporates</span>
-            </div>
-          </div>
-          <div class="card">
-            <div class="section-kicker">Business model</div>
-            <h2 class="section-title">SaaS with deep, sticky value.</h2>
-            <p class="muted">
-              Subscription‑based pricing with add‑ons and services that deepen adoption and retention.
-            </p>
-            <ul>
-              <li><span class="bullet"></span><span><strong>Starter / Growth / Enterprise</strong> tiers aligned to institution size and regulator coverage.</span></li>
-              <li><span class="bullet"></span><span><strong>Add‑ons:</strong> reporting automation, KYC integrations, custom mappings.</span></li>
-              <li><span class="bullet"></span><span><strong>Services:</strong> compliance transformation, audit readiness, regulatory mapping projects.</span></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Advantage & vision -->
-      <section>
-        <div class="section-grid">
-          <div class="card">
-            <div class="section-kicker">Why we win</div>
-            <h2 class="section-title">A local, defensible RegTech platform.</h2>
-            <ul>
-              <li><span class="bullet"></span><span><strong>Multi‑regulator coverage</strong> across Nigeria’s full ecosystem.</span></li>
-              <li><span class="bullet"></span><span><strong>Localised AI</strong> tuned to Nigerian regulatory language and context.</span></li>
-              <li><span class="bullet"></span><span><strong>Deep workflow integration</strong> that embeds into day‑to‑day operations.</span></
+}
