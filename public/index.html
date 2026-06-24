@@ -330,21 +330,36 @@ section {
       overflow: hidden;
 }
 
-/* Gradient wave background */
-.footer-wave {
+/* Nigeria-shaped gradient wave */
+.footer-nigeria {
       position: absolute;
-      top: -120px;
+      top: -140px;
       left: 50%;
       transform: translateX(-50%);
-      width: 140%;
-      height: 260px;
+      width: 520px;
+      height: 360px;
+
+      /* Nigeria silhouette using clip-path */
+      -webkit-clip-path: polygon(
+          12% 18%, 22% 10%, 35% 12%, 45% 8%, 55% 12%, 65% 10%, 75% 18%,
+          82% 28%, 88% 40%, 90% 55%, 85% 70%, 75% 82%, 60% 88%, 45% 85%,
+          35% 88%, 25% 82%, 18% 70%, 12% 55%, 10% 40%
+      );
+      clip-path: polygon(
+          12% 18%, 22% 10%, 35% 12%, 45% 8%, 55% 12%, 65% 10%, 75% 18%,
+          82% 28%, 88% 40%, 90% 55%, 85% 70%, 75% 82%, 60% 88%, 45% 85%,
+          35% 88%, 25% 82%, 18% 70%, 12% 55%, 10% 40%
+      );
+
+      /* Gradient wave glow */
       background: radial-gradient(
-            ellipse at bottom,
-            rgba(255,77,141,0.35),
-            rgba(138,43,226,0.25),
-            rgba(0,230,184,0.15),
+            circle at center,
+            rgba(255,77,141,0.45),
+            rgba(138,43,226,0.35),
+            rgba(0,230,184,0.25),
             transparent 70%
       );
+
       filter: blur(40px);
       opacity: 0.55;
       pointer-events: none;
