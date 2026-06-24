@@ -292,13 +292,23 @@ nav {
       margin-bottom: 28px;
       line-height: 1.55;
 }
-
+/* Fix hero button spacing */
 .hero-actions {
       display: flex;
       justify-content: center;
-      gap: 14px;
-      margin-bottom: 20px;
+      align-items: center;
+      gap: 16px; /* perfect spacing for two premium CTAs */
+      margin-bottom: 24px; /* more breathing room under buttons */
 }
+
+.hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap; /* prevents wrapping */
+}
+
+
 
 .hero-meta {
       font-size: 12px;
