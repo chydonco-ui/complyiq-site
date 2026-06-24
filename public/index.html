@@ -175,27 +175,41 @@ nav {
 
 
 /* Glowing border */
-.btn-secondary::before {
+.btn-primary::after,
+.btn-secondary::after {
       content: "";
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      padding: 2px;
-      background: linear-gradient(
-            135deg,
-            rgba(255,255,255,0.4),
-            rgba(255,255,255,0.15),
-            rgba(255,255,255,0.4)
-      );
-      background-size: 300% 300%;
-      animation: borderGlow 6s ease infinite;
-      -webkit-mask: 
-            linear-gradient(#000 0 0) content-box, 
-            linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-      pointer-events: none;
+      z-index: -1;
+      filter: blur(22px);
+      opacity: 0.55;
+      transition: opacity 0.3s ease;
 }
+
+.btn-primary::after {
+      background: radial-gradient(
+            circle,
+            rgba(0,245,204,0.45),
+            rgba(124,58,237,0.35),
+            transparent 70%
+      );
+}
+
+.btn-secondary::after {
+      background: radial-gradient(
+            circle,
+            rgba(255,255,255,0.35),
+            rgba(255,255,255,0.15),
+            transparent 70%
+      );
+}
+
+.btn-primary:hover::after,
+.btn-secondary:hover::after {
+      opacity: 0.75;
+}
+
 
 
 
