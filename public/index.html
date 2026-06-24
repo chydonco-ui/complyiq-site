@@ -322,7 +322,7 @@ section {
 .footer {
       position: relative;
       margin-top: 100px;
-      padding: 60px 0;
+      padding: 80px 0 40px;
       border-top: 1px solid rgba(255,255,255,0.08);
       display: flex;
       justify-content: center;
@@ -330,21 +330,26 @@ section {
       overflow: hidden;
 }
 
-/* Background decorative image */
-.footer-bg {
+/* Gradient wave background */
+.footer-wave {
       position: absolute;
-      top: -40px;
+      top: -120px;
       left: 50%;
       transform: translateX(-50%);
-      width: 420px;
-      height: 420px;
-      background: url('https://cube.global/assets/footer-bg.svg') no-repeat center/contain;
-      opacity: 0.18;
+      width: 140%;
+      height: 260px;
+      background: radial-gradient(
+            ellipse at bottom,
+            rgba(255,77,141,0.35),
+            rgba(138,43,226,0.25),
+            rgba(0,230,184,0.15),
+            transparent 70%
+      );
+      filter: blur(40px);
+      opacity: 0.55;
       pointer-events: none;
-      filter: blur(2px);
 }
 
-/* Content */
 .footer-content {
       position: relative;
       z-index: 2;
@@ -354,13 +359,13 @@ section {
       gap: 8px;
 }
 
-.footer-brand {
+.footer-left {
       font-size: 14px;
       font-weight: 500;
       color: var(--text);
 }
 
-.footer-sub {
+.footer-right {
       font-size: 12px;
       color: var(--muted);
 }
