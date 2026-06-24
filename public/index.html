@@ -320,10 +320,11 @@ section {
    9. FOOTER
 -------------------------------------------------- */
 /* Footer container */
+/* Footer container */
 .footer {
       position: relative;
       margin-top: 100px;
-      padding: 80px 0 40px;
+      padding: 100px 0 50px;
       border-top: 1px solid rgba(255,255,255,0.08);
       display: flex;
       justify-content: center;
@@ -331,16 +332,16 @@ section {
       overflow: hidden;
 }
 
-/* Nigeria silhouette with gradient wave */
-.footer-nigeria {
+/* Nigeria mesh gradient */
+.footer-nigeria-mesh {
       position: absolute;
-      top: -160px;
+      top: -200px;
       left: 50%;
       transform: translateX(-50%);
-      width: 520px;
-      height: 360px;
+      width: 620px;
+      height: 420px;
 
-      /* Nigeria outline shape */
+      /* Nigeria silhouette */
       -webkit-clip-path: polygon(
           12% 18%, 22% 10%, 35% 12%, 45% 8%, 55% 12%, 65% 10%, 75% 18%,
           82% 28%, 88% 40%, 90% 55%, 85% 70%, 75% 82%, 60% 88%, 45% 85%,
@@ -352,27 +353,25 @@ section {
           35% 88%, 25% 82%, 18% 70%, 12% 55%, 10% 40%
       );
 
-      /* Gradient wave */
-      background: radial-gradient(
-            circle at center,
-            rgba(255,77,141,0.45),
-            rgba(138,43,226,0.35),
-            rgba(0,230,184,0.25),
-            transparent 70%
-      );
+      /* Mesh gradient */
+      background:
+          radial-gradient(circle at 20% 30%, rgba(255,77,141,0.55), transparent 60%),
+          radial-gradient(circle at 80% 20%, rgba(138,43,226,0.45), transparent 60%),
+          radial-gradient(circle at 50% 80%, rgba(0,230,184,0.45), transparent 60%),
+          radial-gradient(circle at 40% 50%, rgba(255,255,255,0.08), transparent 70%);
 
-      filter: blur(40px);
+      filter: blur(50px);
       opacity: 0.55;
       pointer-events: none;
 
-      /* Scroll animation */
-      animation: nigeriaFloat 12s ease-in-out infinite;
+      /* Breathing animation */
+      animation: meshFloat 14s ease-in-out infinite;
 }
 
 /* Subtle floating animation */
-@keyframes nigeriaFloat {
+@keyframes meshFloat {
       0%   { transform: translateX(-50%) translateY(0); }
-      50%  { transform: translateX(-50%) translateY(18px); }
+      50%  { transform: translateX(-50%) translateY(22px); }
       100% { transform: translateX(-50%) translateY(0); }
 }
 
