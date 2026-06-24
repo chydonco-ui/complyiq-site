@@ -319,6 +319,7 @@ section {
 /* --------------------------------------------------
    9. FOOTER
 -------------------------------------------------- */
+/* Footer container */
 .footer {
       position: relative;
       margin-top: 100px;
@@ -330,16 +331,16 @@ section {
       overflow: hidden;
 }
 
-/* Nigeria-shaped gradient wave */
+/* Nigeria silhouette with gradient wave */
 .footer-nigeria {
       position: absolute;
-      top: -140px;
+      top: -160px;
       left: 50%;
       transform: translateX(-50%);
       width: 520px;
       height: 360px;
 
-      /* Nigeria silhouette using clip-path */
+      /* Nigeria outline shape */
       -webkit-clip-path: polygon(
           12% 18%, 22% 10%, 35% 12%, 45% 8%, 55% 12%, 65% 10%, 75% 18%,
           82% 28%, 88% 40%, 90% 55%, 85% 70%, 75% 82%, 60% 88%, 45% 85%,
@@ -351,7 +352,7 @@ section {
           35% 88%, 25% 82%, 18% 70%, 12% 55%, 10% 40%
       );
 
-      /* Gradient wave glow */
+      /* Gradient wave */
       background: radial-gradient(
             circle at center,
             rgba(255,77,141,0.45),
@@ -363,8 +364,19 @@ section {
       filter: blur(40px);
       opacity: 0.55;
       pointer-events: none;
+
+      /* Scroll animation */
+      animation: nigeriaFloat 12s ease-in-out infinite;
 }
 
+/* Subtle floating animation */
+@keyframes nigeriaFloat {
+      0%   { transform: translateX(-50%) translateY(0); }
+      50%  { transform: translateX(-50%) translateY(18px); }
+      100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* Footer content */
 .footer-content {
       position: relative;
       z-index: 2;
