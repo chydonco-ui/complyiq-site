@@ -152,11 +152,34 @@ nav {
 }
 
 /* Optional: glowing border for secondary button */
+/* Secondary CTA — base styles */
 .btn-secondary {
       position: relative;
       overflow: hidden;
+
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.25s ease;
+      backdrop-filter: blur(6px);
 }
 
+/* Hover lift */
+.btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.btn-secondary:active {
+      transform: translateY(-1px) scale(0.98);
+}
+
+/* Glowing border */
 .btn-secondary::before {
       content: "";
       position: absolute;
@@ -178,6 +201,7 @@ nav {
               mask-composite: exclude;
       pointer-events: none;
 }
+
 
 
 
